@@ -2,24 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Brand CSS variables ───────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #1c3a2b;
+  --color-primary-light: #2d5a40;
+  --color-accent: #c8922a;
+  --color-neutral-dark: #1a1a1a;
+  --color-neutral-mid: #4a4a4a;
+  --color-neutral-light: #f5f2ed;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─── Base layer ─────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-neutral-dark bg-white antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+
+  /* Remove default focus outline in favor of custom ring */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
+/* ─── Utility layer ──────────────────────────────────────────────────────── */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
