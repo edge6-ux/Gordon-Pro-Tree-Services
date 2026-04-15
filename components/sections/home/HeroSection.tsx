@@ -33,17 +33,15 @@ export default function HeroSection() {
       {/* ─── Background image + gradient overlay ───────────────────────── */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero/gpthero2.jpg"
-          alt="Gordon Pro Tree Service professional crew working in the North Georgia forest"
+          src="/images/hero/newhero.webp"
+          alt="Gordon Pro Tree Service truck and equipment on the job in North Georgia"
           fill
           priority
           sizes="100vw"
           className="object-cover object-center"
         />
-        {/* Bottom-heavy gradient so bottom-left text is always readable */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/20" />
-        {/* Subtle left-side vignette for text legibility on desktop */}
-        <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
+        {/* Solid overlay — increased to /60 so text stays readable over lighter truck image */}
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* ─── Main content ───────────────────────────────────────────────── */}

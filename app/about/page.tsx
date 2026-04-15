@@ -82,7 +82,8 @@ export default function AboutPage() {
                   Gordon Pro Tree Service was built on a simple belief — that
                   every customer deserves a crew that shows up on time,
                   communicates clearly, and leaves your property cleaner than
-                  they found it. That belief drives everything we do.
+                  they found it. Our team brings that standard to every single
+                  job.
                 </p>
                 <p>
                   We serve homeowners and businesses across Hall, Gwinnett,
@@ -106,8 +107,8 @@ export default function AboutPage() {
               className="relative h-[400px] md:h-full md:min-h-[480px] rounded-xl overflow-hidden"
             >
               <Image
-                src="/images/about/inspection.jpg"
-                alt="Arborist measuring and inspecting tree trunk"
+                src="/images/hero/newimage2.webp"
+                alt="Gordon Pro Tree Service crew working together on tree removal in North Georgia"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
@@ -163,15 +164,28 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 bg-white overflow-hidden">
         <Container>
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
-            {/* Left — image */}
-            <FadeIn className="relative h-[400px] md:h-full md:min-h-[480px] rounded-xl overflow-hidden">
-              <Image
-                src="/images/about/cleanyard2.jpg"
-                alt="Clean residential yard after professional tree removal"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-              />
+            {/* Left — stacked image pair */}
+            <FadeIn className="flex flex-col gap-4">
+              {/* Top image — always visible */}
+              <div className="relative h-[240px] rounded-xl overflow-hidden">
+                <Image
+                  src="/images/hero/newimage.webp"
+                  alt="Gordon Pro crew using track loader for shrub and land clearing at residential property"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+              {/* Bottom image — hidden on mobile */}
+              <div className="relative h-[240px] rounded-xl overflow-hidden hidden md:block">
+                <Image
+                  src="/images/about/cleanyard.avif"
+                  alt="Clean residential yard after professional tree removal"
+                  fill
+                  sizes="50vw"
+                  className="object-cover"
+                />
+              </div>
             </FadeIn>
 
             {/* Right — text */}

@@ -107,7 +107,7 @@ export default function WhyChooseUs() {
 
             {/* Headline */}
             <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase text-neutral-dark leading-tight mb-5 text-balance">
-              Veteran-Owned. Certified. Here When It Counts.
+              Licensed. Certified. Here When It Counts.
             </h2>
 
             {/* Body copy */}
