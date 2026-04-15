@@ -4,7 +4,7 @@ const SITE_NAME = "Gordon Pro Tree Service";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://gordonprotree.com";
 const DEFAULT_DESCRIPTION =
   "Professional tree removal, trimming, stump grinding, and emergency tree services in Gainesville, GA and North Georgia. Licensed, insured, and locally trusted. Free estimates.";
-const DEFAULT_OG_IMAGE = "/images/og-default.jpg";
+const DEFAULT_OG_IMAGE = "/images/hero/gptsgreen.png";
 
 // ─── Default metadata (used in root layout) ─────────────────────────────────
 
