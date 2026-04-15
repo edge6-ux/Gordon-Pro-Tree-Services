@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Check, Star } from "lucide-react";
+import { Check } from "lucide-react";
 import { Container } from "@/components/ui";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -152,17 +152,6 @@ export default function WhyChooseUs() {
               </Link>
             </div>
 
-            {/* Veteran badge — subtle, bottom of column */}
-            <div className="mt-8 pt-6 border-t border-neutral-100 flex items-center gap-2">
-              <Star
-                size={15}
-                className="text-accent fill-accent shrink-0"
-                aria-hidden="true"
-              />
-              <span className="text-sm text-neutral-mid font-medium">
-                Veteran Owned &amp; Operated
-              </span>
-            </div>
           </div>
         </div>
       </Container>
