@@ -132,7 +132,7 @@ export default function Header() {
           isScrolled ? "shadow-lg bg-primary/95 backdrop-blur-sm" : ""
         }`}
       >
-        <Container size="lg">
+        <Container size="full">
           <div className="flex items-center justify-between h-14 md:h-16 gap-6">
             {/* Logo emblem */}
             <Link href="/" className="shrink-0" aria-label="Gordon Pro Tree Service — Home">

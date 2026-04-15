@@ -35,7 +35,7 @@ const SERVICES: ServiceItem[] = [
   },
   {
     title: "Tree Trimming",
-    image: "/images/services/tree-trimming.jpg",
+    image: "/images/services/service7.jpg",
     imageAlt: "Tree trimming and pruning service in North Georgia",
     icon: Scissors,
     description: "Shape, thin and prune for healthier trees and a cleaner property.",

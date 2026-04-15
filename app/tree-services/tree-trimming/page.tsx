@@ -14,7 +14,7 @@ export default function TreeTrimmingPage() {
     <ServicePageTemplate
       title="Tree Trimming & Pruning"
       subtitle="Healthier Trees, Cleaner Property"
-      heroImage="/images/services/tree-trimming.jpg"
+      heroImage="/images/services/service7.jpg"
       heroAlt="Certified arborist trimming a tree in North Georgia"
       intro="Regular trimming isn't just cosmetic — it's essential for tree health, property safety, and keeping your home protected from overhanging limbs. Our certified arborists know exactly what to cut and what to leave."
       bullets={[

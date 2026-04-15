@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { NAV_ITEMS, type NavItem } from "@/lib/navigation";
 import { Button } from "@/components/ui";
 
@@ -99,13 +100,14 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
       >
         {/* Drawer header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-primary-light shrink-0">
-          <Link href="/" onClick={onClose} className="flex flex-col">
-            <span className="font-heading font-bold text-white uppercase text-xl leading-none tracking-wider">
-              Gordon Pro
-            </span>
-            <span className="font-heading text-accent uppercase text-xs tracking-widest leading-tight mt-0.5">
-              Tree Service
-            </span>
+          <Link href="/" onClick={onClose} aria-label="Gordon Pro Tree Service — Home">
+            <Image
+              src="/images/hero/gptslogo.png"
+              alt="Gordon Pro Tree Service logo"
+              width={48}
+              height={48}
+              className="h-10 w-auto object-contain"
+            />
           </Link>
           <button
             type="button"
