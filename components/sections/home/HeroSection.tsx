@@ -32,37 +32,58 @@ export default function HeroSection() {
     <section className="relative min-h-[85vh] md:min-h-screen overflow-hidden flex flex-col">
       {/* ─── Background image + gradient overlay ───────────────────────── */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero/newhero.webp"
-          alt="Gordon Pro Tree Service truck and equipment on the job in North Georgia"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        {/* Solid overlay — increased to /60 so text stays readable over lighter truck image */}
-        <div className="absolute inset-0 bg-black/60" />
+        {/* Mobile: vertical shot */}
+        <div className="absolute inset-0 md:hidden">
+          <Image
+            src="/images/hero/gpthero2.jpg"
+            alt="Gordon Pro Tree Service arborist climbing a tree in North Georgia"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
+        {/* Desktop: wide angle shot */}
+        <div className="absolute inset-0 hidden md:block">
+          <Image
+            src="/images/hero/newhero.webp"
+            alt="Gordon Pro Tree Service arborist climbing a tree in North Georgia"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-top"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
-      {/* ─── Main content ───────────────────────────────────────────────── */}
-      {/* justify-center on mobile centers vertically; md:justify-end pins to bottom */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center md:justify-end">
-        <Container className="py-14 md:pb-20 md:pt-0 w-full">
+      {/* ─── Top: h1 just below navbar (desktop) / centered with all content (mobile) ── */}
+      <div className="relative z-10 flex flex-col justify-center flex-1 md:flex-none">
+        <Container className="py-14 md:pt-16 md:pb-0 w-full">
           <FadeIn>
-            <div className="max-w-2xl mx-auto md:mx-0 text-center md:text-left">
+            <div className="max-w-2xl mx-auto text-center">
+              {/* Mobile-only logo */}
+              <div className="flex justify-center mb-6 md:hidden">
+                <Image
+                  src="/images/hero/gptslogo.png"
+                  alt="Gordon Pro Tree Service"
+                  width={120}
+                  height={120}
+                  className="w-28 h-28 object-contain drop-shadow-lg"
+                />
+              </div>
+
               {/* H1 */}
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl text-white uppercase leading-tight mb-5 text-balance">
+              <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl text-white uppercase leading-tight mb-10 text-balance">
                 North Georgia&apos;s Most Trusted Tree Service
               </h1>
 
-              {/* Sub-headline */}
-              <p className="text-white/80 text-lg md:text-xl mb-8 leading-relaxed max-w-xl mx-auto md:mx-0">
+              {/* Sub-headline + buttons — mobile only, inline below h1 */}
+              <p className="text-white/80 text-lg mb-8 leading-relaxed max-w-xl mx-auto md:hidden">
                 Licensed, insured &amp; locally trusted. Serving Hall, Gwinnett,
                 Forsyth &amp; surrounding counties since day one.
               </p>
-
-              {/* CTA buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:hidden">
                 <Button variant="primary" href="/contact" size="lg">
                   Get a Free Quote
                 </Button>
@@ -70,6 +91,27 @@ export default function HeroSection() {
               </div>
             </div>
           </FadeIn>
+        </Container>
+      </div>
+
+      {/* ─── Spacer (desktop only) ──────────────────────────────────────── */}
+      <div className="hidden md:flex flex-1" />
+
+      {/* ─── Bottom: sub-headline + buttons (desktop only) ─────────────── */}
+      <div className="relative z-10 hidden md:block">
+        <Container className="pb-20 w-full">
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="text-white/80 text-xl mb-8 leading-relaxed max-w-xl mx-auto">
+              Licensed, insured &amp; locally trusted. Serving Hall, Gwinnett,
+              Forsyth &amp; surrounding counties since day one.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="primary" href="/contact" size="lg">
+                Get a Free Quote
+              </Button>
+              <Button variant="ghost" asPhone size="lg" />
+            </div>
+          </div>
         </Container>
       </div>
 
