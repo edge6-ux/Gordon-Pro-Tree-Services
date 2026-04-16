@@ -20,6 +20,11 @@ export const metadata: Metadata = {
     description:
       "Professional tree removal, trimming, stump grinding & emergency tree services in Gainesville, GA. Licensed, insured &amp; locally trusted. Free estimates.",
     url: "https://gordonprotree.com",
+    images: [{ url: "/images/hero/newhero.webp", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/hero/newhero.webp"],
   },
 };
 
