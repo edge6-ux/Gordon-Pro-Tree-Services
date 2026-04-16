@@ -20,12 +20,12 @@ const QUICK_LINKS = [
 ];
 
 const SERVICE_LINKS = [
-  { label: "Tree Removal", href: "/services/tree-removal" },
-  { label: "Tree Trimming & Pruning", href: "/services/tree-trimming" },
-  { label: "Stump Grinding", href: "/services/stump-grinding" },
-  { label: "Emergency Tree Service", href: "/services/emergency" },
-  { label: "Tree Health & Care", href: "/services/tree-health" },
-  { label: "Land Clearing", href: "/services/land-clearing" },
+  { label: "Tree Removal", href: "/tree-services/tree-removal" },
+  { label: "Tree Trimming & Pruning", href: "/tree-services/tree-trimming" },
+  { label: "Stump Removal", href: "/tree-services/stump-removal" },
+  { label: "Emergency Tree Service", href: "/tree-services/emergency-tree-service" },
+  { label: "Tree Planting", href: "/tree-services/tree-planting" },
+  { label: "Land Clearing", href: "/tree-services/land-clearing" },
 ];
 
 const PAYMENT_METHODS = [
