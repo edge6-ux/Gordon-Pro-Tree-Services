@@ -50,19 +50,6 @@ export default function HeroSection() {
         <Container className="py-14 md:pb-20 md:pt-0 w-full">
           <FadeIn>
             <div className="max-w-2xl mx-auto md:mx-0 text-center md:text-left">
-              {/* Logo */}
-              <div className="flex justify-center md:justify-start mb-6">
-                <Image
-                  src="/images/hero/gptslogo.png"
-                  alt="Gordon Pro Tree Service"
-                  width={150}
-                  height={150}
-                  priority
-                  className="w-[120px] h-[120px] md:w-[150px] md:h-[150px]"
-                  style={{ objectFit: "contain", mixBlendMode: "normal" }}
-                />
-              </div>
-
               {/* H1 */}
               <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl text-white uppercase leading-tight mb-5 text-balance">
                 North Georgia&apos;s Most Trusted Tree Service
