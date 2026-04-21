@@ -78,14 +78,15 @@ export default function HeroSection() {
                 North Georgia&apos;s Most Trusted Tree Service
               </h1>
 
-              {/* Sub-headline + buttons — mobile only, inline below h1 */}
-              <p className="text-white/80 text-lg mb-8 leading-relaxed max-w-xl mx-auto md:hidden">
+              {/* Sub-headline — visible on all screen sizes */}
+              <p className="text-white/80 text-lg md:text-xl mb-8 leading-relaxed max-w-xl mx-auto">
                 Licensed, insured &amp; locally trusted. Serving Hall, Gwinnett,
                 Forsyth &amp; surrounding counties since day one.
               </p>
+              {/* Buttons — mobile only, desktop handled below */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:hidden">
-                <Button variant="primary" href="/contact" size="lg">
-                  Get a Free Quote
+                <Button variant="primary" href="https://project-q9cfi.vercel.app/submit" size="lg">
+                  Get an Assessment
                 </Button>
                 <Button variant="ghost" asPhone size="lg" />
               </div>
@@ -97,17 +98,13 @@ export default function HeroSection() {
       {/* ─── Spacer (desktop only) ──────────────────────────────────────── */}
       <div className="hidden md:flex flex-1" />
 
-      {/* ─── Bottom: sub-headline + buttons (desktop only) ─────────────── */}
+      {/* ─── Bottom: buttons (desktop only) ────────────────────────────── */}
       <div className="relative z-10 hidden md:block">
         <Container className="pb-20 w-full">
           <div className="max-w-2xl mx-auto text-center">
-            <p className="text-white/80 text-xl mb-8 leading-relaxed max-w-xl mx-auto">
-              Licensed, insured &amp; locally trusted. Serving Hall, Gwinnett,
-              Forsyth &amp; surrounding counties since day one.
-            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" href="/contact" size="lg">
-                Get a Free Quote
+              <Button variant="primary" href="https://project-q9cfi.vercel.app/submit" size="lg">
+                Get an Assessment
               </Button>
               <Button variant="ghost" asPhone size="lg" />
             </div>

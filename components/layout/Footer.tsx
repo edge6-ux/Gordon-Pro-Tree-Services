@@ -16,7 +16,7 @@ const QUICK_LINKS = [
   { label: "Reviews", href: "/reviews" },
   { label: "Gallery", href: "/gallery" },
   { label: "Contact Us", href: "/contact" },
-  { label: "Get Free Quote", href: "/contact#quote" },
+  { label: "Get an Assessment", href: "https://project-q9cfi.vercel.app/submit" },
 ];
 
 const SERVICE_LINKS = [

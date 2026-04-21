@@ -166,8 +166,8 @@ export default function Header() {
 
             {/* Desktop CTA */}
             <div className="hidden lg:block shrink-0">
-              <Button variant="primary" href="/contact#quote" size="sm">
-                Free Quote
+              <Button variant="primary" href="https://project-q9cfi.vercel.app/submit" size="sm">
+                Get an Assessment
               </Button>
             </div>
 

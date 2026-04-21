@@ -141,8 +141,8 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
 
         {/* Bottom CTA strip */}
         <div className="shrink-0 p-4 border-t border-primary-light space-y-3">
-          <Button variant="primary" href="/contact#quote" className="w-full">
-            Get Free Quote
+          <Button variant="primary" href="https://project-q9cfi.vercel.app/submit" className="w-full">
+            Get an Assessment
           </Button>
           <Button variant="ghost" asPhone className="w-full" />
         </div>
