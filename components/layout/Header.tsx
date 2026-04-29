@@ -186,7 +186,7 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* Desktop auth links + CTA */}
+            {/* Desktop auth links */}
             <div className="hidden lg:flex items-center gap-3 shrink-0">
               {user ? (
                 <>
@@ -205,21 +205,13 @@ export default function Header() {
                   </button>
                 </>
               ) : (
-                <>
-                  <Link
-                    href="/login"
-                    className="font-body text-sm font-medium text-white/80 hover:text-white transition-colors"
-                  >
-                    Sign In
-                  </Link>
-                  <Button variant="primary" href="/signup" size="sm">
-                    Get Started
-                  </Button>
-                </>
+                <Link
+                  href="/login"
+                  className="font-body text-sm font-medium bg-accent hover:bg-accent-dark text-white px-4 py-2 rounded-xl transition-colors"
+                >
+                  Sign In
+                </Link>
               )}
-              <Button variant="primary" href="https://project-q9cfi.vercel.app/submit" size="sm">
-                Get an Assessment
-              </Button>
             </div>
 
             {/* Mobile: phone + hamburger */}
