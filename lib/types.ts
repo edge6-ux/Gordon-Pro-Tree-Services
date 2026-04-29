@@ -36,6 +36,7 @@ export type CustomerQuote = {
   id: string
   created_at: string
   customer_name: string
+  customer_email?: string
   property_address: string
   description_of_work: string
   total_cost: number
@@ -43,6 +44,14 @@ export type CustomerQuote = {
   date: string
   customer_signature: string | null
   signed_at: string | null
+  job_id?: string | null
+  sales_rep?: string | null
+  hours_estimate?: number | null
+  wet_dry?: string | null
+  tree_services_cost?: number | null
+  stump_removal_cost?: number | null
+  discount?: number | null
+  card_fee_applied?: boolean | null
 }
 
 export type AIResult = {

@@ -18,6 +18,13 @@ export function timeAgo(dateStr: string): string {
   return fmtDate(dateStr)
 }
 
+export function formatCurrency(amount: number): string {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format(amount)
+}
+
 export function getInitials(name: string): string {
   const words = name.trim().split(/\s+/).filter(Boolean)
   if (!words.length) return 'U'
