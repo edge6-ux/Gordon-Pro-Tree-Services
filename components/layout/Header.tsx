@@ -3,11 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import type { User } from "@supabase/supabase-js";
 import { Container, Button } from "@/components/ui";
 import MobileNav from "./MobileNav";
 import { NAV_ITEMS, type NavItem } from "@/lib/navigation";
 import { PHONE_NUMBER, PHONE_HREF } from "@/lib/constants";
+import { createClient } from "@/lib/supabase-client";
 
 // ─── Desktop dropdown ─────────────────────────────────────────────────────────
 
@@ -91,7 +93,27 @@ function DesktopNavLink({
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
   const pathname = usePathname();
+  const router = useRouter();
+
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data }) => setUser(data.user));
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+    return () => subscription.unsubscribe();
+  }, []);
+
+  async function handleSignOut() {
+    const supabase = createClient();
+    await supabase.auth.signOut();
+    router.push("/");
+    router.refresh();
+  }
 
   // Scroll detection
   useEffect(() => {
@@ -164,8 +186,37 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* Desktop CTA */}
-            <div className="hidden lg:block shrink-0">
+            {/* Desktop auth links + CTA */}
+            <div className="hidden lg:flex items-center gap-3 shrink-0">
+              {user ? (
+                <>
+                  <Link
+                    href="/dashboard"
+                    className="font-body text-sm font-medium text-white/80 hover:text-white transition-colors"
+                  >
+                    My Account
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={handleSignOut}
+                    className="font-body text-sm font-medium text-white/60 hover:text-white transition-colors"
+                  >
+                    Sign Out
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/login"
+                    className="font-body text-sm font-medium text-white/80 hover:text-white transition-colors"
+                  >
+                    Sign In
+                  </Link>
+                  <Button variant="primary" href="/signup" size="sm">
+                    Get Started
+                  </Button>
+                </>
+              )}
               <Button variant="primary" href="https://project-q9cfi.vercel.app/submit" size="sm">
                 Get an Assessment
               </Button>

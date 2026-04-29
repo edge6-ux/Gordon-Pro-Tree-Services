@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
-import { Header, Footer } from "@/components/layout";
+import ConditionalLayout from "@/components/layout/ConditionalLayout";
 import { defaultMetadata } from "@/lib/metadata";
 
 // ─── Google Fonts ─────────────────────────────────────────────────────────────
@@ -33,9 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${oswald.variable} ${inter.variable}`}>
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <ConditionalLayout>{children}</ConditionalLayout>
       </body>
     </html>
   );
