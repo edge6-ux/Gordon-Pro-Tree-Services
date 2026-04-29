@@ -83,8 +83,8 @@ export default function HeroSection() {
                 Licensed, insured &amp; locally trusted. Serving Hall, Gwinnett,
                 Forsyth &amp; surrounding counties since day one.
               </p>
-              {/* Buttons — mobile only, desktop handled below */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center md:hidden">
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="primary" href="https://project-q9cfi.vercel.app/submit" size="lg">
                   Get an Assessment
                 </Button>
@@ -97,20 +97,6 @@ export default function HeroSection() {
 
       {/* ─── Spacer (desktop only) ──────────────────────────────────────── */}
       <div className="hidden md:flex flex-1" />
-
-      {/* ─── Bottom: buttons (desktop only) ────────────────────────────── */}
-      <div className="relative z-10 hidden md:block">
-        <Container className="pb-20 w-full">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" href="https://project-q9cfi.vercel.app/submit" size="lg">
-                Get an Assessment
-              </Button>
-              <Button variant="ghost" asPhone size="lg" />
-            </div>
-          </div>
-        </Container>
-      </div>
 
       {/* ─── Trust badge strip ──────────────────────────────────────────── */}
       <div className="relative z-10 bg-black/50 backdrop-blur-sm border-t border-white/10">
