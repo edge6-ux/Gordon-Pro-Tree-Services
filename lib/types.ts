@@ -16,11 +16,20 @@ export type CustomerJob = {
   customer_email: string
   property_address: string
   status: string
+  service_type?: string
   reference_code: string
   scheduled_date: string | null
   scheduled_time: string | null
   completed_at: string | null
   submission_id: string
+}
+
+export type CustomerMessage = {
+  id: string
+  created_at: string
+  direction: string
+  job_id: string
+  body: string
 }
 
 export type CustomerQuote = {
