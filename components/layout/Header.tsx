@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import type { User } from "@supabase/supabase-js";
-import { Container, Button } from "@/components/ui";
+import { Container } from "@/components/ui";
 import MobileNav from "./MobileNav";
 import { NAV_ITEMS, type NavItem } from "@/lib/navigation";
 import { PHONE_NUMBER, PHONE_HREF } from "@/lib/constants";
