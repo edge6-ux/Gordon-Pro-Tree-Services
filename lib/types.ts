@@ -45,6 +45,34 @@ export type CustomerQuote = {
   signed_at: string | null
 }
 
+export type AIResult = {
+  no_tree_detected?: boolean
+  species_name: string
+  species_confidence: 'high' | 'medium' | 'low'
+  species_description: string
+  key_characteristics: string[]
+  site_considerations: string[]
+  crew_tips: string[]
+  generated_at?: string
+}
+
+export type CustomerFinding = {
+  severity: 'high' | 'medium' | 'low'
+  plain_english: string
+}
+
+export type CustomerResult = {
+  species_name: string
+  species_blurb: string
+  safety_status: 'attention_needed' | 'monitor' | 'healthy'
+  safety_summary: string
+  findings: CustomerFinding[]
+  recommendation: string
+  recommended_service: string
+  preventative_tips: string[]
+  urgency: 'emergency' | 'soon' | 'routine' | 'none'
+}
+
 export type CustomerSubmission = {
   id: string
   created_at: string
@@ -52,8 +80,13 @@ export type CustomerSubmission = {
   urgency: string
   property_address: string
   photo_urls: string[]
-  ai_result: unknown | null
-  customer_result: unknown | null
+  ai_result: AIResult | null
+  customer_result: CustomerResult | null
   reference_code: string
   status: string
+  job_id?: string | null
+}
+
+export type JobWithSubmission = CustomerJob & {
+  submission: CustomerSubmission | null
 }
