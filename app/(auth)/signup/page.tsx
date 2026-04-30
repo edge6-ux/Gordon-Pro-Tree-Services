@@ -77,6 +77,17 @@ export default function SignupPage() {
         .eq('id', user.id)
     }
 
+    // Fire welcome email — never block signup if it fails
+    try {
+      await fetch('/api/auth/welcome', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ customerName: fullName, customerEmail: email }),
+      })
+    } catch {
+      // intentionally silent
+    }
+
     if (data.session) {
       router.push('/dashboard')
       router.refresh()
