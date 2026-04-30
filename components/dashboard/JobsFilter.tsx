@@ -404,7 +404,7 @@ export default function JobsFilter({ jobs, fieldAppUrl }: JobsFilterProps) {
             Start with a free AI assessment of your tree
           </p>
           <a
-            href={fieldAppUrl}
+            href={`${fieldAppUrl}/submit`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-4 bg-[#1C3A2B] text-white font-body text-[14px] font-medium px-5 py-2.5 rounded-xl hover:bg-[#2D5A40] transition-colors"

@@ -97,7 +97,8 @@ export default async function DashboardPage() {
 
   const firstName = profile?.full_name?.split(' ')[0] ?? 'there'
   const hasActivity = jobs.length > 0 || pendingQuotes.length > 0
-  const fieldAppUrl = process.env.NEXT_PUBLIC_FIELD_APP_URL ?? '#'
+  const fieldAppUrl = (process.env.NEXT_PUBLIC_FIELD_APP_URL ?? '').replace(/\/$/, '')
+  const assessmentUrl = `${fieldAppUrl}/submit`
 
   return (
     <div>
@@ -211,7 +212,7 @@ export default async function DashboardPage() {
             <Briefcase size={32} className="text-[#888780] mx-auto" />
             <p className="font-body text-[#888780] text-[14px] mt-2">No jobs yet</p>
             <a
-              href={fieldAppUrl}
+              href={assessmentUrl}
               className="inline-block mt-4 bg-[#1C3A2B] text-white font-body text-[14px] font-medium px-4 py-2.5 rounded-xl hover:bg-[#2D5A40] transition-colors"
             >
               Start a free assessment
@@ -299,7 +300,7 @@ export default async function DashboardPage() {
             Get a free AI-powered tree assessment in minutes.
           </p>
           <a
-            href={fieldAppUrl}
+            href={assessmentUrl}
             className="inline-flex items-center gap-2 mt-6 bg-[#C8922A] text-[#1A1A1A] font-body font-medium px-6 py-3 rounded-xl hover:bg-[#a8751f] transition-colors"
           >
             <Sparkles size={16} />

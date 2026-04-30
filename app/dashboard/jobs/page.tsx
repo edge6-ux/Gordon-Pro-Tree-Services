@@ -35,7 +35,8 @@ export default async function JobsPage() {
     (s) => s.customer_result !== null
   )
 
-  const fieldAppUrl = process.env.NEXT_PUBLIC_FIELD_APP_URL ?? '#'
+  const fieldAppUrl = (process.env.NEXT_PUBLIC_FIELD_APP_URL ?? '').replace(/\/$/, '')
+  const assessmentUrl = `${fieldAppUrl}/submit`
 
   return (
     <div>
@@ -48,7 +49,7 @@ export default async function JobsPage() {
           </p>
         </div>
         <a
-          href={fieldAppUrl}
+          href={assessmentUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 bg-[#1C3A2B] text-white font-body text-[14px] font-medium px-4 py-2.5 rounded-xl hover:bg-[#2D5A40] transition-colors"
