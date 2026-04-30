@@ -25,6 +25,21 @@ export function formatCurrency(amount: number): string {
   }).format(amount)
 }
 
+export function fmtDateTime(dateStr: string): string {
+  const date = new Date(dateStr)
+  const now = new Date()
+  const isToday = date.toDateString() === now.toDateString()
+  if (isToday) {
+    return date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
+  }
+  return date.toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+  })
+}
+
 export function getInitials(name: string): string {
   const words = name.trim().split(/\s+/).filter(Boolean)
   if (!words.length) return 'U'
