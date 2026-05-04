@@ -16,7 +16,7 @@ export default function CTABanner({
     "Get a free estimate from North Georgia's trusted tree service professionals.",
   variant = "green",
   className = "",
-  quoteText = "Get Free Quote",
+  quoteText = "Request a Quote",
 }: CTABannerProps) {
   const isGreen = variant === "green";
 
@@ -56,7 +56,7 @@ export default function CTABanner({
             {/* Quote CTA */}
             <Button
               variant={isGreen ? "primary" : "ghost"}
-              href="/contact#quote"
+              href="https://project-q9cfi.vercel.app/request-quote"
               size="md"
             >
               {quoteText}

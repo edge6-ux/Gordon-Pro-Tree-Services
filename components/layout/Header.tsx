@@ -188,6 +188,12 @@ export default function Header() {
 
             {/* Desktop auth links */}
             <div className="hidden lg:flex items-center gap-3 shrink-0">
+              <Link
+                href="https://project-q9cfi.vercel.app/request-quote"
+                className="font-heading text-sm font-semibold uppercase tracking-wider bg-accent hover:bg-accent-dark text-white px-4 py-2 rounded transition-colors"
+              >
+                Request a Quote
+              </Link>
               {user ? (
                 <>
                   <Link

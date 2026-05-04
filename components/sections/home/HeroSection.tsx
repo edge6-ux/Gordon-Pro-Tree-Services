@@ -85,8 +85,8 @@ export default function HeroSection() {
               </p>
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="primary" href="https://project-q9cfi.vercel.app/submit" size="lg">
-                  Get an Assessment
+                <Button variant="primary" href="https://project-q9cfi.vercel.app/request-quote" size="lg">
+                  Request a Quote
                 </Button>
                 <Button variant="ghost" asPhone size="lg" />
               </div>
