@@ -77,6 +77,17 @@ export default function SignupPage() {
         .eq('id', user.id)
     }
 
+    // Sync to admin customer_profiles — never block signup if it fails
+    try {
+      await fetch('/api/auth/sync-customer', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: fullName, phone, email }),
+      })
+    } catch {
+      // intentionally silent
+    }
+
     // Fire welcome email — never block signup if it fails
     try {
       await fetch('/api/auth/welcome', {
